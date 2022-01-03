@@ -1,6 +1,6 @@
-import { addToId, addClick, checkClick } from "./scripts/helpers.js";
-import { venues } from "./data/venuesData.js";
-import selectVenueTemplate from "./templates/selectVenue.js";
+import { addToId, addClick, checkClick } from "https://ryanguitar.github.io/onlineBooking/scripts/helpers.js";
+import { venues } from "https://ryanguitar.github.io/onlineBooking/data/venuesData.js";
+import selectVenueTemplate from "https://ryanguitar.github.io/onlineBooking/templates/selectVenue.js";
 
 function selectVenue() {
   window.venues = venues;
