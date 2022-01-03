@@ -1,5 +1,3 @@
-"use strict";
-
 function getId(id) {
   return document.getElementById(id);
 }
@@ -13,7 +11,7 @@ function addClick(id, fn) {
 }
 
 async function importPage(page) {
-  const getPage = await import(`../pages/${page}.js`);
+  const getPage = await import(`../onlineBooking/pages/${page}.js`);
   getPage.default();
 }
 
