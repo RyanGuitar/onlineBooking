@@ -18,7 +18,15 @@ function success() {
   </div>`;
 
   addToId("AppContent", successHTML);
-  addClick("exit", () => window.close());
+  addClick("exit", () => closeWindow());
+}
+
+function closeWindow() {
+  const new_window = open(location, '_self');
+
+  new_window.close();
+
+  return false;
 }
 
 export default success;

@@ -70,9 +70,7 @@ function saveSelectedTable(e) {
 
 function checkClick(e) {
   if (e.target.tagName == "IMG") {
-    window.venue = window.venues.filter((venue) => {
-      return venue.id == e.target.id;
-    });
+    window.venue = window.venues.filter((venue) => venue.id == e.target.id);
     if (window.venue !== 0) {
       addToId(
         "headerCenter",
