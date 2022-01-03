@@ -11,7 +11,7 @@ function addToId(id, add) {
 }
 
 async function importPage(page) {
-  const getPage = await import(`../onlineBooking/pages/${page}.js`);
+  const getPage = await import(`./onlineBooking/pages/${page}.js`);
   getPage.default();
 }
 
