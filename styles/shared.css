@@ -26,13 +26,13 @@ img {
   top: 0;
   right: 0;
 }
-#headerLogoBox {
+/*#headerLogoBox {
   position: absolute;
   top: 50%;
   left: 5%;
   transform: translate(0%, -50%);
   aspect-ratio: 530/350;
-}
+}*/
 .logoBox {
   border:1px solid black;
   box-shadow: 3px 3px 7px black;
@@ -173,7 +173,7 @@ img {
 #calendarInnerBox {
   position: relative;
   margin: auto;
-  width: 26%;
+  width:26%;
   aspect-ratio: 1/1;
   overflow: hidden;
 }
@@ -311,7 +311,12 @@ button:disabled {
     height: auto;
   }
   #headerLogoBox {
-    width: 10%;
+    position: absolute;
+    width:10%;
+    top: 50%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    aspect-ratio: 530/350;
   }
 }
 
@@ -354,5 +359,21 @@ button:disabled {
     width: 90%;
     aspect-ratio: 1/1;
     overflow: hidden;
+  }
+  #headerLogoBox {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    width:15%;
+    aspect-ratio: 530/350;
+  }
+  #headerGameBox {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    transform: translate(0%, -50%);
+    aspect-ratio: 530/350;
+    width: 15%;
   }
 }
