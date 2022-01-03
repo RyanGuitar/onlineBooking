@@ -1,6 +1,6 @@
-import { addToId, addClick, checkClick } from "./onlineBooking/scripts/helpers.js";
-import { venues } from "./onlineBooking/data/venuesData.js";
-import selectVenueTemplate from "./onlineBooking/templates/selectVenue.js";
+import { addToId, addClick, checkClick } from "./scripts/helpers.js";
+import { venues } from "./data/venuesData.js";
+import selectVenueTemplate from "./templates/selectVenue.js";
 
 function selectVenue() {
   window.venues = venues;
