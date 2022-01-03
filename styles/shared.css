@@ -1,0 +1,358 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  user-select: none;
+}
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+#header {
+  position: relative;
+}
+#headerText {
+  background: green;
+  color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#headerLogoBox {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0%, -50%);
+  aspect-ratio: 530/350;
+}
+.logoBox {
+  border:1px solid black;
+  box-shadow: 3px 3px 7px black;
+}
+.logoBox:hover {
+  opacity:0.6;
+}
+#headerGameBox {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(0%, -50%);
+  aspect-ratio: 530/350;
+  width: 10%;
+}
+#headerLogo {
+  width: 100%;
+  height: auto;
+}
+#buttonBox {
+  padding-top: 1rem;
+}
+#signInBtn, #exit,
+#headerConfirm,
+#mapLocation {
+  background: green;
+  display: block;
+  color: white;
+  margin: auto;
+  font-size: 1rem;
+  width: 90%;
+  padding: 0.5rem 1rem;
+}
+#signInBtn:hover, #exit:hover, #headerConfirm:hover, #mapLocation:hover {
+  opacity:0.7;
+}
+#confirm {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  box-shadow: 3px 3px 5px black;
+}
+#confirm:hover {
+  opacity:0.7;
+}
+.sliderImgBox:hover {
+  color:gray;
+  opacity:0.7;
+}
+.booked:hover {
+  color:white;
+  opacity:1;
+}
+#headerCenter {
+  position: absolute;
+  margin: 0.5rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#headerConfirm {
+  box-shadow: 3px 3px 5px black;
+  width: auto;
+  background: green;
+}
+.btn {
+  border: none;
+  cursor: pointer;
+}
+#selectVenue {
+  display: flex;
+
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+.logo {
+  width: 100px;
+  height: auto;
+}
+#venueDetails {
+  height: 50%;
+}
+#tableBox {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.tables {
+  aspect-ratio: 1.5/1;
+  width: 20%;
+}
+.tables:hover {
+  opacity:0.7;
+}
+#googleMap {
+  margin: 1rem;
+  display: block;
+  text-align: center;
+}
+.dart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mapBox {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+#backMapBtn {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  box-shadow: 3px 3px 5px black;
+  top: 0;
+  right: 0;
+  background: green;
+  color: white;
+}
+#back {
+  box-shadow: 3px 3px 5px black;
+  background: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+#backMapBtn:hover, #back:hover, #continue:hover {
+  opacity:0.7;
+}
+#continue {
+  box-shadow: 3px 3px 5px black;
+  background: green;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+#calendarInnerBox {
+  position: relative;
+  margin: auto;
+  width: 26%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+#calender {
+  padding: 0 1rem;
+  margin: 0 1rem;
+}
+#weekDays,
+#monthDays {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#monthDays div,
+#weekDays div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14.28%;
+  font-weight: 700;
+  aspect-ratio: 1/1;
+}
+#weekDays div {
+  aspect-ratio: 1/0.5;
+}
+#monthDays div {
+  border: 1px solid lightgray;
+  aspect-ratio: 1/1;
+}
+#monthDays {
+  width: 100%;
+}
+.noBorder {
+  visibility: hidden;
+}
+.hover-light-green:hover {
+  color: #000 !important;
+  background-color: #8bc34a !important;
+}
+#calendarBtnBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#calendarBtnBox button {
+  width: 45%;
+  text-shadow: 1px 1px black;
+}
+.x-emerald {
+  color: #fff;
+  background-color: #008a00;
+}
+.x-emerald-hover:hover {
+  color: #fff;
+  background-color: #008a00;
+}
+.x-blue {
+  color: #fff;
+  background-color: #3e65ff;
+}
+.red {
+  color: #fff;
+  background-color: #e51400;
+}
+.x-olive {
+  color: #fff;
+  background-color: #6d8764;
+}
+button:disabled {
+  opacity: 0.7;
+}
+#dateBox {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+  margin: 0.5rem;
+  background: green;
+}
+/** Slider **/
+.scrollmenu {
+  padding: 10px 0;
+  position: relative;
+  overflow: auto;
+  white-space: nowrap
+}
+.scrollmenu div {
+  width: auto;
+  height: 200%;
+  display: inline-block
+}
+.sliderImgBox {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid black
+}
+
+/*** LANDSCAPE MODE ***/
+
+@media only screen and (orientation: landscape) {
+  #screen {
+    height: 90%;
+  }
+  #header {
+    background: green;
+    width: 100%;
+    aspect-ratio: 100/18;
+  }
+  #landing {
+    margin: auto;
+  }
+  #selectVenue {
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+  }
+
+  .logoBox {
+    width: 15%;
+    height: auto;
+  }
+  #headerLogoBox {
+    width: 10%;
+  }
+}
+
+/*** PORTRAIT MODE ***/
+
+@media only screen and (orientation: portrait) {
+  #screen {
+    width: 100%;
+    aspect-ratio: 18/28;
+  }
+  #header {
+    background: green;
+    width: 100%;
+    aspect-ratio: 100/40;
+  }
+  #landing {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  #selectVenue {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+  #selectADate {
+    width: 100%;
+    height: 70%;
+  }
+  .logoBox {
+    width: 30%;
+    height: auto;
+  }
+  #headerLogoBox {
+    width: 20%;
+  }
+  #calendarInnerBox {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+}
