@@ -11,8 +11,8 @@ function addToId(id, add) {
 }
 
 async function importPage(page) {
-  const getPage = await import(`https://ryanguitar.github.io/onlineBooking/pages/${page}.js`);
-  //const getPage = await import(`../pages/${page}.js`);
+  //const getPage = await import(`https://ryanguitar.github.io/onlineBooking/pages/${page}.js`);
+  const getPage = await import(`../pages/${page}.js`);
   getPage.default();
 }
 
