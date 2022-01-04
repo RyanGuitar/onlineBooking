@@ -7,6 +7,7 @@ function success() {
         src="images/finished.jpeg"
         style="width: 100%; height: 100%; object-fit: cover"
         id="headerImage"
+        alt="finished image"
       />
       <div id="headerText">Booking Successful</div>
     </div>

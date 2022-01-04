@@ -6,6 +6,7 @@ function venueDetailsTemplate() {
         src="images/facilities.jpg"
         style="width: 100%; height: 100%; object-fit: cover"
         id="headerImage"
+        alt="facilities image"
       />
       <div id="headerText">Select a Game</div>
       <div id="headerLogoBox"></div>

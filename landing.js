@@ -12,6 +12,8 @@ function addClick(id, fn) {
 
 async function importPage(page) {
   const getPage = await import(`https://ryanguitar.github.io/onlineBooking/pages/${page}.js`);
+  //const getPage = await import(`../pages/${page}.js`);
+  console.log(getPage)
   getPage.default();
 }
 
@@ -22,6 +24,7 @@ const landingHTML = `
           src="images/landing.jpeg"
           style="width: 100%; height: 100%; object-fit: cover"
           id="headerImage"
+          alt="landing image"
         />
         <div id="headerText">Online Booking Website</div>
       </div>

@@ -6,6 +6,7 @@ function selectVenueTemplate() {
           src="images/location.jpg"
           style="width: 100%; height: 100%; object-fit: cover"
           id="headerImage"
+          alt="loaction image"
         />
         <div id="headerText">Select A Venue</div>
         <div id="headerLogoBox"></div>

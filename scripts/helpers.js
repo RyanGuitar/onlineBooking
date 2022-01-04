@@ -12,6 +12,7 @@ function addToId(id, add) {
 
 async function importPage(page) {
   const getPage = await import(`https://ryanguitar.github.io/onlineBooking/pages/${page}.js`);
+  //const getPage = await import(`../pages/${page}.js`);
   getPage.default();
 }
 
@@ -28,13 +29,16 @@ function addToIdImage(id, url) {
 }
 
 function addClass(id) {
-  getId(id).classList.add("x-emerald");
+  getId(id).classList.add("dateClick");
+}
+function addHeadClass(id, x){
+  getId(id).classList.add(x);
 }
 
 function clearClicks() {
   const clear = document.querySelectorAll(".dates");
   clear.forEach((btn) => {
-    btn.classList.remove("x-emerald");
+    btn.classList.remove("dateClick");
   });
 }
 
@@ -81,6 +85,7 @@ function checkClick(e) {
         "headerLogoBox",
         `<img src=${window.venue[0].image} alt=${window.venue[0].image} style="aspect-ratio:530/350;width:100%;height:100%;object-fit:cover;">`
       );
+      addHeadClass("headerLogoBox", "headerBorder")
     }
   }
 }
@@ -98,4 +103,5 @@ export {
   dateClicked,
   saveSelectedTable,
   checkClick,
+  addHeadClass
 };

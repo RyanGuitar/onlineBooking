@@ -20,19 +20,19 @@ const times = [];
 function checkPickedTime(e) {
   if (
     !e.target.className.includes("x-") &&
-    !e.target.className.includes("red") &&
+    !e.target.className.includes("dateClick") &&
     e.target.dataset.time
   ) {
-    e.target.classList.add("red");
+    e.target.classList.add("dateClick");
     addToId(
       "headerCenter",
-      `<button class="red btn" id="confirm">Confirm Booking</button>`
+      `<button class="x-emerald btn" id="confirm">Confirm Booking</button>`
     );
     addClick("confirm", () => importPage("success"));
     times.push(e.target.dataset.time);
-  } else if (e.target.className.includes("red")) {
+  } else if (e.target.className.includes("dateClick")) {
     e.target.textContent = e.target.dataset.time;
-    e.target.classList.remove("red");
+    e.target.classList.remove("dateClick");
   } else {
     return;
   }

@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
 *,
 *:before,
@@ -14,31 +15,35 @@ img {
   border-style: none;
   vertical-align: middle;
 }
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  object-position: center;
+}
 #header {
   position: relative;
 }
 #headerText {
-  background: green;
-  color: white;
+  font-size: clamp(1rem, 1vw + 0.75rem, 2rem);
+  font-weight: 800;
+  border: 1px solid black;
+  text-shadow: 1px 1px black;
+  background: #008a00;
+  color: #fff;
   padding: 0.5rem;
   margin: 0.5rem;
   position: absolute;
   top: 0;
   right: 0;
 }
-/*#headerLogoBox {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translate(0%, -50%);
-  aspect-ratio: 530/350;
-}*/
 .logoBox {
-  border:1px solid black;
-  box-shadow: 3px 3px 7px black;
+  box-shadow: 9px 9px 13px gray;
 }
 .logoBox:hover {
-  opacity:0.6;
+  opacity: 0.6;
+  box-shadow: none;
 }
 #headerGameBox {
   position: absolute;
@@ -55,47 +60,89 @@ img {
 #buttonBox {
   padding-top: 1rem;
 }
-#signInBtn, #exit,
-#headerConfirm,
-#mapLocation {
-  background: green;
+.headerBorder {
+  border: 1px solid black;
+}
+#signInBtn,
+#mapLocation,
+#exit {
+  background: #008a00;
   display: block;
-  color: white;
+  color: #fff;
   margin: auto;
-  font-size: 1rem;
+  font-size: clamp(1rem, 1vw + 0.8rem, 2rem);
+  font-weight: 700;
+  text-shadow: 1px 1px black;
+  box-shadow: 7px 7px 13px black;
   width: 90%;
   padding: 0.5rem 1rem;
+  border-radius: 7px;
 }
-#signInBtn:hover, #exit:hover, #headerConfirm:hover, #mapLocation:hover {
-  opacity:0.7;
-}
+#headerConfirm,
+#back,
+#backMapBtn,
+#continue,
 #confirm {
   text-align: center;
+  border-radius: 7px;
+  text-shadow: 1px 1px black;
+  background: #008a00;
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(1rem, 1vw + 0.6rem, 1.2rem);
+  box-shadow: 7px 7px 13px black;
   padding: 0.5rem 1rem;
-  box-shadow: 3px 3px 5px black;
+}
+#signInBtn:hover,
+#exit:hover,
+#headerConfirm:hover,
+#mapLocation:hover {
+  opacity: 0.7;
 }
 #confirm:hover {
-  opacity:0.7;
+  opacity: 0.7;
 }
-.sliderImgBox:hover {
-  color:gray;
-  opacity:0.7;
+.opacity {
+  opacity: 0.6;
+  font-weight: 300;
+  font-size: 14px;
 }
-.booked:hover {
-  color:white;
-  opacity:1;
+.today {
+  font-weight: 900;
+  font-size: 18px;
+  text-shadow: 1px 1px black;
+}
+.dateClick {
+  font-size: 19px;
+  font-weight: 800;
+  text-shadow: 1px 1px black;
+  outline: 1px solid black;
+  color: #fff;
+  background-color: #3e65ff;
+}
+.calNav {
+  font-size: 18px;
+  border-radius: 7px;
+}
+.calNav:disabled {
+  background-color: gray;
+  opacity: 0.5;
+  box-shadow: none;
+}
+.booked {
+  font-weight: 700;
+  text-shadow: 1px 1px black;
 }
 #headerCenter {
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   margin: 0.5rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-#headerConfirm {
-  box-shadow: 3px 3px 5px black;
-  width: auto;
-  background: green;
 }
 .btn {
   border: none;
@@ -103,7 +150,6 @@ img {
 }
 #selectVenue {
   display: flex;
-
   flex-wrap: wrap;
   padding: 0 1rem;
 }
@@ -124,7 +170,7 @@ img {
   width: 20%;
 }
 .tables:hover {
-  opacity:0.7;
+  opacity: 0.7;
 }
 #googleMap {
   margin: 1rem;
@@ -141,41 +187,19 @@ img {
   top: 0;
   left: 0;
   margin: auto;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 #backMapBtn {
   position: absolute;
-  padding: 0.5rem 1rem;
   margin: 1rem;
-  box-shadow: 3px 3px 5px black;
   top: 0;
   right: 0;
-  background: green;
-  color: white;
 }
-#back {
-  box-shadow: 3px 3px 5px black;
-  background: green;
-  color: white;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
-}
-#backMapBtn:hover, #back:hover, #continue:hover {
-  opacity:0.7;
-}
-#continue {
-  box-shadow: 3px 3px 5px black;
-  background: green;
-  color: white;
-  padding: 0.5rem 1rem;
-}
-#calendarInnerBox {
-  position: relative;
-  margin: auto;
-  width:26%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
+#backMapBtn:hover,
+#back:hover,
+#continue:hover {
+  opacity: 0.7;
 }
 #calender {
   padding: 0 1rem;
@@ -218,6 +242,7 @@ img {
 }
 #calendarBtnBox {
   position: absolute;
+  text-shadow: 1px 1px black;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -227,13 +252,8 @@ img {
 }
 #calendarBtnBox button {
   width: 45%;
-  text-shadow: 1px 1px black;
 }
 .x-emerald {
-  color: #fff;
-  background-color: #008a00;
-}
-.x-emerald-hover:hover {
   color: #fff;
   background-color: #008a00;
 }
@@ -255,24 +275,27 @@ button:disabled {
 #dateBox {
   position: absolute;
   padding: 0.5rem 1rem;
-  top: 0;
+  border: 1px solid black;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, 0);
-  color: white;
+  font-weight: 700;
   margin: 0.5rem;
-  background: green;
+  font-size: clamp(1rem, 1vw + 0.75rem, 2rem);
+  background: #3e65ff;
+  text-shadow: 1px 1px black;
+  color: white;
 }
-/** Slider **/
 .scrollmenu {
   padding: 10px 0;
   position: relative;
   overflow: auto;
-  white-space: nowrap
+  white-space: nowrap;
 }
 .scrollmenu div {
   width: auto;
   height: 200%;
-  display: inline-block
+  display: inline-block;
 }
 .sliderImgBox {
   display: flex;
@@ -281,99 +304,7 @@ button:disabled {
   align-items: center;
   flex-direction: column;
   padding: 1rem;
-  border: 1px solid black
-}
-
-/*** LANDSCAPE MODE ***/
-
-@media only screen and (orientation: landscape) {
-  #screen {
-    height: 90%;
-  }
-  #header {
-    background: green;
-    width: 100%;
-    aspect-ratio: 100/18;
-  }
-  #landing {
-    margin: auto;
-  }
-  #selectVenue {
-    margin: auto;
-    justify-content: space-between;
-    align-items: center;
-    height: 50vh;
-    width: 100%;
-  }
-
-  .logoBox {
-    width: 15%;
-    height: auto;
-  }
-  #headerLogoBox {
-    position: absolute;
-    width:10%;
-    top: 50%;
-    left: 5%;
-    transform: translate(0%, -50%);
-    aspect-ratio: 530/350;
-  }
-}
-
-/*** PORTRAIT MODE ***/
-
-@media only screen and (orientation: portrait) {
-  #screen {
-    width: 100%;
-    aspect-ratio: 18/28;
-  }
-  #header {
-    background: green;
-    width: 100%;
-    aspect-ratio: 100/40;
-  }
-  #landing {
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-  #selectVenue {
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-  #selectADate {
-    width: 100%;
-    height: 70%;
-  }
-  .logoBox {
-    width: 30%;
-    height: auto;
-  }
-  #headerLogoBox {
-    width: 20%;
-  }
-  #calendarInnerBox {
-    position: relative;
-    margin: auto;
-    width: 90%;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-  }
-  #headerLogoBox {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    transform: translate(0%, -50%);
-    width:15%;
-    aspect-ratio: 530/350;
-  }
-  #headerGameBox {
-    position: absolute;
-    top: 70%;
-    left: 5%;
-    transform: translate(0%, -50%);
-    aspect-ratio: 530/350;
-    width: 15%;
-  }
+  font-size: 16px;
+  font-weight: 700;
+  border: 1px solid black;
 }

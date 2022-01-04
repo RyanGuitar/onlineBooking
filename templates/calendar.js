@@ -31,7 +31,7 @@ function calendar() {
     } else {
       calendarHTML +=
         i == window.today && window.dateUsed == window.todaysDate
-          ? `<div><button class="btn x-emerald block x-emerald-hover" style="width:100%;height:100%" id=${i}>${i}</button></div>`
+          ? `<div><button class="btn x-emerald block x-emerald-hover today" style="width:100%;height:100%" id=${i}>${i}</button></div>`
           : `<div><button class="btn block x-emerald-hover dates" style="height:100%;width:100%" id=${i}>${i}</button></div>`;
     }
   }
@@ -39,8 +39,8 @@ function calendar() {
   calendarHTML += `</div>
                     </div>
                         <div id="calendarBtnBox" class="container row">
-                          <button id="dateBack" class="x-emerald btn col s4" disabled="true"><b><</b></button>
-                          <button id="dateForward" class="x-emerald btn col s4"><b>></b></button>
+                          <button id="dateBack" class="x-emerald btn col s4 calNav" disabled="true"><b><</b></button>
+                          <button id="dateForward" class="x-emerald btn col s4 calNav"><b>></b></button>
                         </div>
                       </div>`;
 

@@ -6,11 +6,12 @@ function SliderTemplate() {
       src="images/time.jpg"
       style="width: 100%; height: 100%; object-fit: cover"
       id="headerImage"
+      alt="clock image"
     />
     <div id="headerText">Pick A Time</div>
     <div id="dateBox"></div>
-    <div id="headerLogoBox"></div>
-    <div id="headerGameBox"></div>
+    <div id="headerLogoBox" class="headerBorder"></div>
+    <div id="headerGameBox" class="headerBorder"></div>
     <div id="headerCenter"></div>
   </div>
   <div id="pickATime">

@@ -3,6 +3,7 @@ import {
   addClick,
   importPage,
   saveSelectedTable,
+  addHeadClass,
 } from "../scripts/helpers.js";
 import venueDetailsTemplate from "../templates/venueDetails.js";
 const venue = window.venue[0];
@@ -15,6 +16,7 @@ async function venueDetails() {
     "headerLogoBox",
     `<img src=${window.venue[0].image} alt=${window.venue[0].image} style="aspect-ratio:530/350;width:100%;height:100%;object-fit:cover;">`
   );
+  addHeadClass("headerLogoBox", "headerBorder");
   addToId("headerCenter", `<button class="btn" id="back">Back</button>`);
   addClick("back", () => importPage("selectVenue"));
   addClick("mapLocation", addMap);
