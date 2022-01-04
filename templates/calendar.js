@@ -31,8 +31,8 @@ function calendar() {
     } else {
       calendarHTML +=
         i == window.today && window.dateUsed == window.todaysDate
-          ? `<div><button class="btn x-emerald block x-emerald-hover today" style="width:100%;height:100%" id=${i}>${i}</button></div>`
-          : `<div><button class="btn block x-emerald-hover dates" style="height:100%;width:100%" id=${i}>${i}</button></div>`;
+          ? `<div><button class="btn x-emerald block today" style="width:100%;height:100%" id=${i}>${i}</button></div>`
+          : `<div><button class="btn block dates" style="height:100%;width:100%" id=${i}>${i}</button></div>`;
     }
   }
 
