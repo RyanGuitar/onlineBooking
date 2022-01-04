@@ -113,7 +113,7 @@ img {
   font-size: 18px;
   text-shadow: 1px 1px black;
 }
-.dateClick {
+.dateClick, .dateClick:hover {
   font-size: 19px;
   font-weight: 800;
   text-shadow: 1px 1px black;
