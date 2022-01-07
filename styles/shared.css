@@ -18,7 +18,7 @@ header {
   width: 100%;
 }
 #headerText {
-  font-size: clamp(1rem, 3 * 1.1vw, 1.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 800;
   text-shadow: 1px 1px black;
   background: #008a00;
@@ -37,7 +37,7 @@ header {
   display: block;
   color: #fff;
   margin: auto;
-  font-size: clamp(1rem, 3 * 1.1vw, 1.3rem);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
   font-weight: 700;
   text-shadow: 1px 1px black;
   box-shadow: 7px 7px 13px gray;
@@ -54,7 +54,7 @@ header {
   display: block;
   color: #fff;
   font-weight: 700;
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   box-shadow: 7px 7px 15px black;
   padding: 0.5rem 1rem;
   border: none;
@@ -152,17 +152,17 @@ header {
 }
 .dates {
   /*font-size: calc(3 * 1vw);*/
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
 }
 .calNav {
   /*font-size: calc(3 * 1vw);*/
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   border-radius: 7px;
 }
 #monthDays div,
 #weekDays div {
   /*font-size: calc(3 * 1vw);*/
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,7 +209,7 @@ header {
   width: auto;
   color: #fff;
   text-shadow: 1px 1px black;
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   padding: 0.5rem 1rem;
   background: #008a00;
   border: 1px solid black;
@@ -229,7 +229,7 @@ header {
 }
 #timeBox,
 #preTimeBox {
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   display: flex;
   margin: 0.5rem 0;
   align-items: center;
@@ -265,7 +265,7 @@ header {
   transform: translate(-50%, 0);
   font-weight: 800;
   margin: 0.5rem;
-  font-size: clamp(1rem, 3 * 0.9vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   color: white;
 }
 .dateBox {
