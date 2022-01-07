@@ -236,6 +236,9 @@ header {
   overflow: auto;
   gap: 1rem;
 }
+#timeBox {
+  max-width:30%;
+}
 
 .booked {
   font-weight: 700;

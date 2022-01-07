@@ -60,7 +60,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 30%;
-    overflow: auto;
   }
   #selectADate {
     width: 100%;
