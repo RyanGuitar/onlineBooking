@@ -1,8 +1,5 @@
 import { months } from "../data/dates.js";
-import {
-  enableButton,
-  disableButton,
-} from "../scripts/helpers.js";
+import { enableButton, disableButton } from "../scripts/helpers.js";
 
 let date = {};
 let first = true;

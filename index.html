@@ -5,15 +5,34 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" value="width=device-width, initial-scale=1">
   <meta name="description" content="Online booking website for pool halls.">
-  <title>Online Booking Website v1</title>
-  <link rel="manifest" href="manifest.json">
+  <title>Online Booking Website</title>
   <link rel="stylesheet" href="styles/shared.css" media="all">
   <link rel="stylesheet" href="styles/portrait.css" media="(orientation:portrait)">
-  <link rel="stylesheet" href="styles/landscape.css" media="(orientation:landscape)">
+  <link rel="stylesheet" href="styles/landscape.css" media="(orientation:landscape)"> 
   <body>
 
-  <div id="AppContent"></div>
-  
-  <script src="landing.js" type="module"></script>
+    <header>
+      <img
+        src="images/landing.jpeg"
+        style="width:100%; height:100%; object-fit:cover"
+        id="headerImage"
+        alt="header image"
+      />
+      <div id="headerText">
+        Online Booking Website
+      </div>
+        <div id="headerLogoBox"></div>
+        <div id="headerLogoCenter"></div>
+        <div id="headerGameBox"></div>
+        <div id="headerCenter"></div>
+        <div id="finalDate"></div>
+        <div id="preTimeBox"></div>
+        <div id="timeBox"></div>
+        <div id="dateBox"></div>
+    </header>
+
+    <main id="AppContent"></main>
+
+    <script src="app.js" type="module"></script>
   </body>
 </html>

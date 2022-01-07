@@ -11,8 +11,7 @@ function addToId(id, add) {
 }
 
 async function importPage(page) {
-  const getPage = await import(`https://ryanguitar.github.io/onlineBooking/pages/${page}.js`);
-  //const getPage = await import(`../pages/${page}.js`);
+  const getPage = await import(`../pages/${page}.js`);
   getPage.default();
 }
 
@@ -31,8 +30,11 @@ function addToIdImage(id, url) {
 function addClass(id) {
   getId(id).classList.add("dateClick");
 }
-function addHeadClass(id, x){
+function addHeadClass(id, x) {
   getId(id).classList.add(x);
+}
+function removeHeadClass(id, x) {
+  getId(id).classList.remove(x);
 }
 
 function clearClicks() {
@@ -49,8 +51,9 @@ function dateClicked(e) {
     addToId("dateBox", window.fullDate);
     addToId(
       "headerCenter",
-      `<button class="btn" id="continue">Continue</button>`
+      `<button class="headerBtn" id="back">Back</button><button class="headerBtn" id="continue">Continue</button>`
     );
+    addClick("back", () => importPage("venueDetails"));
     addClick("continue", () => importPage("pickTime"));
     addClass(e.target.id);
   }
@@ -63,9 +66,11 @@ function saveSelectedTable(e) {
       "headerGameBox",
       `<img src="images/${window.selectedTable}.jpg" alt="snooker" id="snooker" style="width: 100%; height: 100%; object-fit: cover">`
     );
+    addHeadClass("headerLogoBox", "headerLogoBoxUp");
+    addHeadClass("headerGameBox", "headerBorder");
     addToId(
       "headerCenter",
-      `<button class="btn" id="back">Back</button><button class="btn" id="continue">Continue</button>`
+      `<button class="headerBtn" id="back">Back</button><button class="headerBtn" id="continue">Continue</button>`
     );
     addClick("back", () => importPage("selectVenue"));
     addClick("continue", () => importPage("selectDate"));
@@ -78,14 +83,15 @@ function checkClick(e) {
     if (window.venue !== 0) {
       addToId(
         "headerCenter",
-        '<button class="btn" id="headerConfirm">Continue</button>'
+        '<button class="headerBtn" id="headerConfirm">Continue</button>'
       );
       addClick("headerConfirm", () => importPage("venueDetails"));
       addToId(
         "headerLogoBox",
         `<img src=${window.venue[0].image} alt=${window.venue[0].image} style="aspect-ratio:530/350;width:100%;height:100%;object-fit:cover;">`
       );
-      addHeadClass("headerLogoBox", "headerBorder")
+      addHeadClass("headerLogoBox", "headerLogoBoxCenter");
+      addHeadClass("headerLogoBox", "headerBorder");
     }
   }
 }
@@ -103,5 +109,6 @@ export {
   dateClicked,
   saveSelectedTable,
   checkClick,
-  addHeadClass
+  addHeadClass,
+  removeHeadClass,
 };

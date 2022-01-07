@@ -1,11 +1,8 @@
-html {
+* {
   box-sizing: border-box;
-  font-size: 16px;
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+html {
+  font-size: 16px;
 }
 body {
   margin: 0;
@@ -15,20 +12,14 @@ img {
   border-style: none;
   vertical-align: middle;
 }
-img {
-  max-inline-size: 100%;
-  block-size: auto;
-  aspect-ratio: 2/1;
-  object-fit: cover;
-  object-position: center;
-}
-#header {
+header {
   position: relative;
+  background: #008a00;
+  width: 100%;
 }
 #headerText {
-  font-size: clamp(1rem, 1vw + 0.75rem, 2rem);
+  font-size: clamp(1rem, 3 * 1.1vw, 1.5rem);
   font-weight: 800;
-  border: 1px solid black;
   text-shadow: 1px 1px black;
   background: #008a00;
   color: #fff;
@@ -38,51 +29,24 @@ img {
   top: 0;
   right: 0;
 }
-.logoBox {
-  box-shadow: 9px 9px 13px gray;
-}
-.logoBox:hover {
-  opacity: 0.6;
-  box-shadow: none;
-}
-#headerGameBox {
-  position: absolute;
-  top: 50%;
-  left: 20%;
-  transform: translate(0%, -50%);
-  aspect-ratio: 530/350;
-  width: 10%;
-}
-#headerLogo {
-  width: 100%;
-  height: auto;
-}
 #buttonBox {
   padding-top: 1rem;
 }
-.headerBorder {
-  border: 1px solid black;
-}
-#signInBtn,
-#mapLocation,
-#exit {
+.contentBtn {
   background: #008a00;
   display: block;
   color: #fff;
   margin: auto;
-  font-size: clamp(1rem, 1vw + 0.8rem, 2rem);
+  font-size: clamp(1rem, 3 * 1vw, 1.3rem);
   font-weight: 700;
   text-shadow: 1px 1px black;
-  box-shadow: 7px 7px 13px black;
+  box-shadow: 7px 7px 13px gray;
   width: 90%;
   padding: 0.5rem 1rem;
+  border: none;
   border-radius: 7px;
 }
-#headerConfirm,
-#back,
-#backMapBtn,
-#continue,
-#confirm {
+.headerBtn {
   text-align: center;
   border-radius: 7px;
   text-shadow: 1px 1px black;
@@ -90,49 +54,15 @@ img {
   display: block;
   color: #fff;
   font-weight: 700;
-  font-size: clamp(1rem, 1vw + 0.6rem, 1.2rem);
-  box-shadow: 7px 7px 13px black;
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
+  box-shadow: 7px 7px 15px black;
   padding: 0.5rem 1rem;
+  border: none;
 }
-#signInBtn:hover,
-#exit:hover,
-#headerConfirm:hover,
-#mapLocation:hover {
-  opacity: 0.8;
-}
-#confirm:hover {
-  opacity: 0.8;
-}
-.opacity {
-  opacity: 0.6;
-  font-weight: 300;
-  font-size: 14px;
-}
-.today {
-  font-weight: 900;
-  font-size: 18px;
-  text-shadow: 1px 1px black;
-}
-.dateClick {
-  font-size: 19px;
-  font-weight: 800;
-  text-shadow: 1px 1px black;
-  outline: 1px solid black;
-  color: #fff;
-  background-color: #3e65ff;
-}
-.calNav {
-  font-size: 18px;
-  border-radius: 7px;
-}
-.calNav:disabled {
-  background-color: gray;
-  opacity: 0.5;
-  box-shadow: none;
-}
-.booked {
-  font-weight: 700;
-  text-shadow: 1px 1px black;
+#headerLogoBox {
+  position: absolute;
+  transform: translate(0%, -50%);
+  aspect-ratio: 530/350;
 }
 #headerCenter {
   position: absolute;
@@ -141,24 +71,10 @@ img {
   gap: 1rem;
   margin: 0.5rem;
   left: 50%;
-  top: 50%;
   transform: translate(-50%, -50%);
 }
-.btn {
-  border: none;
-  cursor: pointer;
-}
-#selectVenue {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 1rem;
-}
-.logo {
-  width: 100px;
-  height: auto;
-}
-#venueDetails {
-  height: 50%;
+.headerCenter {
+  top: 50%;
 }
 #tableBox {
   display: flex;
@@ -167,26 +83,39 @@ img {
 }
 .tables {
   aspect-ratio: 1.5/1;
-  width: 20%;
 }
-.tables:hover {
-  opacity: 0.8;
-}
-#googleMap {
-  margin: 1rem;
-  display: block;
-  text-align: center;
+#headerGameBox {
+  position: absolute;
+  transform: translate(0%, -50%);
+  aspect-ratio: 530/350;
 }
 .dart {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+#selectVenue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+.logoBox {
+  aspect-ratio: 530/350;
+  box-shadow: 9px 9px 13px gray;
+}
+.logoBox:hover {
+  opacity: 0.6;
+  box-shadow: none;
+}
+.headerBorder {
+  border: 1px solid black;
+}
 #mapBox {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
-  margin: auto;
   height: 100vh;
   width: 100vw;
 }
@@ -196,14 +125,22 @@ img {
   top: 0;
   right: 0;
 }
-#backMapBtn:hover,
-#back:hover,
-#continue:hover {
-  opacity: 0.8;
+#calendarBtnBox {
+  position: absolute;
+  text-shadow: 1px 1px black;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 #calender {
   padding: 0 1rem;
   margin: 0 1rem;
+}
+#calendarBtnBox button {
+  border: none;
+  width: 45%;
 }
 #weekDays,
 #monthDays {
@@ -213,45 +150,98 @@ img {
   flex-wrap: wrap;
   align-content: center;
 }
-
+.dates {
+  /*font-size: calc(3 * 1vw);*/
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
+}
+.calNav {
+  /*font-size: calc(3 * 1vw);*/
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
+  border-radius: 7px;
+}
 #monthDays div,
 #weekDays div {
+  /*font-size: calc(3 * 1vw);*/
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 14.28%;
-  font-weight: 700;
-  aspect-ratio: 1/1;
 }
 #weekDays div {
   aspect-ratio: 1/0.5;
 }
 #monthDays div {
   border: 1px solid lightgray;
-  aspect-ratio: 1/1;
 }
 #monthDays {
   width: 100%;
 }
+
+.today {
+  text-shadow: 1px 1px black;
+  background: #008a00;
+  color: white;
+}
+.dateClick {
+  font-weight: 800;
+  text-shadow: 1px 1px black;
+  outline: 1px solid black;
+  color: #fff;
+  background-color: #3e65ff;
+}
 .noBorder {
   visibility: hidden;
 }
-/*.hover-light-green:hover {
-  color: #000 !important;
-  background-color: #8bc34a !important;
-}*/
-#calendarBtnBox {
-  position: absolute;
-  text-shadow: 1px 1px black;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.calNav:disabled {
+  background-color: gray;
+  opacity: 0.5;
+  box-shadow: none;
 }
-#calendarBtnBox button {
-  width: 45%;
+
+.finalDate {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  width: auto;
+  color: #fff;
+  text-shadow: 1px 1px black;
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
+  padding: 0.5rem 1rem;
+  background: #008a00;
+  border: 1px solid black;
+}
+.timeBox,
+.timeSelected {
+  width: auto;
+  color: #fff;
+  background: #008a00;
+  font-weight: 800;
+  border: 1px solid black;
+  text-shadow: 1px 1px black;
+  padding: 0.5rem 1rem;
+}
+.timeSelected {
+  background: #3e65ff;
+}
+#timeBox,
+#preTimeBox {
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
+  display: flex;
+  margin: 0.5rem 0;
+  align-items: center;
+  overflow: auto;
+  gap: 1rem;
+}
+
+.booked {
+  font-weight: 700;
+  text-shadow: 1px 1px black;
+  color: #fff;
+  background-color: #008a00;
 }
 .x-emerald {
   color: #fff;
@@ -261,30 +251,27 @@ img {
   color: #fff;
   background-color: #3e65ff;
 }
-.red {
-  color: #fff;
-  background-color: #e51400;
-}
 .x-olive {
   color: #fff;
+  opacity: 0.7;
   background-color: #6d8764;
 }
-button:disabled {
-  opacity: 0.7;
-}
+
 #dateBox {
   position: absolute;
   padding: 0.5rem 1rem;
-  border: 1px solid black;
   top: 75%;
   left: 50%;
   transform: translate(-50%, 0);
-  font-weight: 700;
+  font-weight: 800;
   margin: 0.5rem;
-  font-size: clamp(1rem, 1vw + 0.75rem, 2rem);
-  background: #3e65ff;
-  text-shadow: 1px 1px black;
+  font-size: clamp(1rem, 3 * 0.7vw, 1.2rem);
   color: white;
+}
+.dateBox {
+  background: #3e65ff;
+  text-shadow: 3px 3px 5px black;
+  border: 1px solid black;
 }
 .scrollmenu {
   padding: 10px 0;
@@ -304,7 +291,6 @@ button:disabled {
   align-items: center;
   flex-direction: column;
   padding: 1rem;
-  font-size: 16px;
   font-weight: 700;
   border: 1px solid black;
 }

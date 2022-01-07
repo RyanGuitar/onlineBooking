@@ -1,30 +1,37 @@
 @media (orientation: portrait) {
-  #screen {
-    width: 100%;
-    aspect-ratio: 18/28;
-  }
-  #header {
-    background: #008a00;
-    width: 100%;
+  header {
     aspect-ratio: 100/40;
   }
-  #landing {
-    width: 100%;
-    aspect-ratio: 1/1;
+  .headerCenter,
+  .headerCenterUp {
+    top: 50%;
+  }
+  #headerLogoBox {
+    width: 20%;
+    left: 5%;
+  }
+  .headerLogoBoxCenter {
+    top: 50%;
+  }
+  .headerLogoBoxUp {
+    top: 30%;
   }
   #selectVenue {
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-  #selectADate {
-    width: 100%;
-    height: 70%;
+    height: 60vh;
   }
   .logoBox {
     width: 30%;
-    height: auto;
+  }
+  #tableBox {
+    margin-top: 3rem;
+  }
+  .tables {
+    width: 30%;
+  }
+  #headerGameBox {
+    top: 70%;
+    left: 5%;
+    width: 20%;
   }
   #calendarInnerBox {
     position: relative;
@@ -33,26 +40,29 @@
     aspect-ratio: 1/1;
     overflow: hidden;
   }
-  #headerLogoBox {
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    transform: translate(0%, -50%);
-    width: 20%;
-    aspect-ratio: 530/350;
+  #monthDays div {
+    aspect-ratio: 1/1;
   }
-  #headerGameBox {
+  #preTimeBox {
     position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 50%;
+    right: 0;
+    max-height: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+  }
+  #timeBox {
+    position: absolute;
+    flex-direction: row;
     top: 70%;
-    left: 5%;
-    transform: translate(0%, -50%);
-    aspect-ratio: 530/350;
-    width: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
   }
-  #tableBox {
-    margin-top: 3rem;
-  }
-  .tables {
-    width: 30%;
+  #selectADate {
+    width: 100%;
+    height: 70%;
   }
 }

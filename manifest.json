@@ -1,8 +1,0 @@
-{
-  "short_name": "Online Booking",
-  "name": "Online Booking Website",
-  "start_url": "index.html",
-  "background_color": "#fff",
-  "theme_color": "#008a00",
-  "display": "standalone"
-}

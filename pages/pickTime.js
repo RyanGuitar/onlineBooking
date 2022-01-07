@@ -1,21 +1,44 @@
-import { addToId, addClick, importPage } from "../scripts/helpers.js";
+import {
+  addToId,
+  addClick,
+  importPage,
+  addToIdImage,
+  addHeadClass,
+  removeHeadClass,
+} from "../scripts/helpers.js";
 import SliderTemplate from "../templates/slider.js";
 
 function pickTime() {
+  addToIdImage("headerImage", "time.jpg");
+  addToId("headerText", "Select A Time");
   addToId("AppContent", SliderTemplate());
   addClick("timePicker", checkPickedTime);
-  addToId(
-    "headerLogoBox",
-    `<img src=${window.venue[0].image} alt=${window.venue[0].image} style="aspect-ratio:530/350;width:100%;height:100%;object-fit:cover;">`
-  );
-  addToId(
-    "headerGameBox",
-    `<img src="images/${window.selectedTable}.jpg" alt="snooker" id="snooker" style="width: 100%; height: 100%; object-fit: cover">`
-  );
-  addToId("dateBox", window.fullDate);
+  addToId("headerCenter", '<button class="headerBtn" id="back">Back</button>');
+  addClick("back", () => importPage("selectDate"));
 }
 
-const times = [];
+let timePickArray = [];
+window.times = [];
+
+function checkTimePicked() {
+  timePickArray = [];
+  window.times = [];
+  const timePicked = document.getElementById("timePicker").children;
+  for (let i = 0; i < timePicked.length; i++) {
+    if (timePicked[i].classList[1] == "dateClick") {
+      window.times.push(timePicked[i].textContent);
+      timePickArray.push("true");
+      displayTimeClicked();
+    }
+  }
+  if (timePickArray.length) {
+    return;
+  }
+  addToId("headerCenter", `<button class="headerBtn" id="back">Back</button>`);
+  displayTimeClicked();
+  removeHeadClass("preTimeBox", "timeSelected");
+  addClick("back", () => importPage("selectDate"));
+}
 
 function checkPickedTime(e) {
   if (
@@ -26,16 +49,30 @@ function checkPickedTime(e) {
     e.target.classList.add("dateClick");
     addToId(
       "headerCenter",
-      `<button class="x-emerald btn" id="confirm">Confirm Booking</button>`
+      `<button class="headerBtn" id="back">Back</button><button class="headerBtn" id="confirm">Confirm Booking</button>`
     );
+    addClick("back", () => importPage("selectDate"));
     addClick("confirm", () => importPage("success"));
-    times.push(e.target.dataset.time);
   } else if (e.target.className.includes("dateClick")) {
     e.target.textContent = e.target.dataset.time;
     e.target.classList.remove("dateClick");
   } else {
     return;
   }
+  checkTimePicked();
+}
+
+function displayTimeClicked() {
+  let times = "";
+  if (window.times.length == 1) {
+    addToId("preTimeBox", window.times[0]);
+  } else {
+    window.times.map((time) => {
+      times += `<div>${time}</div>`;
+    });
+    addToId("preTimeBox", times);
+  }
+  addHeadClass("preTimeBox", "timeSelected");
 }
 
 export default pickTime;
