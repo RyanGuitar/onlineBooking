@@ -9,6 +9,7 @@ import {
 } from "../scripts/helpers.js";
 import venueDetailsTemplate from "../templates/venueDetails.js";
 
+
 const venue = window.venue[0];
 async function venueDetails() {
   removeHeadClass("headerLogoBox", "headerLogoBoxUp");

@@ -1,4 +1,5 @@
 function venueDetailsTemplate() {
+  
   const venueDetailsHTML = `
     <div class="row" id="tableBox">
       <div class="col s3 tables">

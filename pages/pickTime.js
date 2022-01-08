@@ -8,6 +8,7 @@ import {
 } from "../scripts/helpers.js";
 import SliderTemplate from "../templates/slider.js";
 
+
 function pickTime() {
   addToIdImage("headerImage", "time.jpg");
   addToId("headerText", "Select A Time");

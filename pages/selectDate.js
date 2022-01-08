@@ -10,6 +10,7 @@ import {
 import { getTheDay, checkIfSameMonth } from "../scripts/calendar.js";
 import calendar from "../templates/calendar.js";
 
+
 function selectADate() {
   getTheDay();
   const calendarHTML = calendar();

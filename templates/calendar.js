@@ -2,6 +2,7 @@ import { getTheDay } from "../scripts/calendar.js";
 
 getTheDay();
 
+
 function calendar() {
   let { daysInMonth, year, month, startMonth } = window.theDay;
 

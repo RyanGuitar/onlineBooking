@@ -2,6 +2,7 @@ function getId(id) {
   return document.getElementById(id);
 }
 
+
 function addClick(id, fn) {
   getId(id).addEventListener("click", fn);
 }

@@ -2,6 +2,7 @@
   header {
     aspect-ratio: 100/40;
   }
+  
   .headerCenter,
   .headerCenterUp {
     top: 50%;

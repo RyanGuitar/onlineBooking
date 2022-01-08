@@ -7,6 +7,7 @@ import {
   addHeadClass,
 } from "../scripts/helpers.js";
 
+
 function success() {
   addToIdImage("headerImage", "finished.jpeg");
   addToId("headerText", "Booking Successful");

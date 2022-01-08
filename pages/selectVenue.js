@@ -8,6 +8,7 @@ import {
 } from "../scripts/helpers.js";
 import { venues } from "../data/venuesData.js";
 
+
 function selectVenue() {
   window.venues = venues;
   addToId("headerLogoBox", "");
