@@ -1,5 +1,4 @@
 function SliderTemplate() {
-  
   const sliderHTML = `
   <div id="pickATime">
     <div class="scrollmenu slider">        

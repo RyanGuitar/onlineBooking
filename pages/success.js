@@ -5,16 +5,15 @@ import {
   removeHeadClass,
   getId,
   addHeadClass,
+  setHeader,
+  clearIdInner,
 } from "../scripts/helpers.js";
 
-
 function success() {
-  addToIdImage("headerImage", "finished.jpeg");
-  addToId("headerText", "Booking Successful");
-  addToId("preTimeBox", "");
+  setHeader("finished.jpeg", "Booking Successful")
+  clearIdInner(["preTimeBox", "dateBox"])
   removeHeadClass("preTimeBox", "timeSelected");
   getId("headerCenter").remove();
-  addToId("dateBox", "");
   removeHeadClass("dateBox", "dateBox");
   addToId("finalDate", `<div>${window.fullDate}</div>`);
   addHeadClass("finalDate", "finalDate");

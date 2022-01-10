@@ -2,7 +2,6 @@ function getId(id) {
   return document.getElementById(id);
 }
 
-
 function addClick(id, fn) {
   getId(id).addEventListener("click", fn);
 }
@@ -46,10 +45,16 @@ function clearClicks() {
 }
 
 function dateClicked(e) {
+
   clearClicks();
   window.fullDate = `${e.target.id} ${window.theDay.month} ${window.theDay.year}`;
   if (e.target.tagName == "BUTTON") {
-    addToId("dateBox", window.fullDate);
+
+    if (e.target.id.length <= 2) {
+      addToId("dateBox", window.fullDate);
+    } else {
+      addToId("dateBox", `${window.theDay.month} ${window.theDay.year}`)
+    }
     addToId(
       "headerCenter",
       `<button class="headerBtn" id="back">Back</button><button class="headerBtn" id="continue">Continue</button>`
@@ -63,12 +68,17 @@ function dateClicked(e) {
 function saveSelectedTable(e) {
   if (e.target.tagName == "IMG") {
     window.selectedTable = e.target.id;
-    addToId(
-      "headerGameBox",
-      `<img src="images/${window.selectedTable}.jpg" alt="snooker" id="snooker" style="width: 100%; height: 100%; object-fit: cover">`
-    );
-    addHeadClass("headerLogoBox", "headerLogoBoxUp");
-    addHeadClass("headerGameBox", "headerBorder");
+    if (e.target.id == "darts") {
+      addToId(
+        "headerGameBox",
+        `<img src="images/${window.selectedTable}.webp" alt="darts" id="darts" style="width: 60%; height: 60%; object-fit: cover">`
+      );
+    } else {
+      addToId(
+        "headerGameBox",
+        `<img src="images/${window.selectedTable}.webp" alt="snooker" id="snooker" style="width: 100%; height: 100%; object-fit: cover">`
+      );
+    }
     addToId(
       "headerCenter",
       `<button class="headerBtn" id="back">Back</button><button class="headerBtn" id="continue">Continue</button>`
@@ -91,11 +101,26 @@ function checkClick(e) {
         "headerLogoBox",
         `<img src=${window.venue[0].image} alt=${window.venue[0].image} style="aspect-ratio:530/350;width:100%;height:100%;object-fit:cover;">`
       );
-      addHeadClass("headerLogoBox", "headerLogoBoxCenter");
-      addHeadClass("headerLogoBox", "headerBorder");
     }
   }
 }
+
+function clearIdInner(arrayIds){
+  arrayIds.map(id => {
+    addToId(id, "")
+  })
+}
+
+function setHeader(image, text){
+  addToIdImage("headerImage", image);
+  addToId("headerText", text);
+}
+
+function addToIdWithClick(id, toId, forClick){
+  addToId(id, toId);
+  addClick(id, forClick);
+}
+
 
 export {
   getId,
@@ -112,4 +137,7 @@ export {
   checkClick,
   addHeadClass,
   removeHeadClass,
+  clearIdInner,
+  setHeader,
+  addToIdWithClick,
 };

@@ -1,15 +1,14 @@
 function venueDetailsTemplate() {
-  
   const venueDetailsHTML = `
-    <div class="row" id="tableBox">
-      <div class="col s3 tables">
-        <img src="images/snooker.jpg" alt="snooker" id="snooker" style="width: 100%; height: 100%; object-fit: cover">
+    <div id="tableBox">
+      <div class="tables">
+        <img src="images/snooker.webp" alt="snooker" id="snooker" style="width: 100%; height: 100%; object-fit: cover">
       </div>
-      <div class="col s3 tables dart">
-        <img src="images/darts.jpg" alt="pool" id="darts" style="width: 70%; height: 100%; object-fit: cover">
+      <div class="tables">
+        <img src="images/darts.webp" alt="darts" id="darts" class="darts" style="width:60%; height: 60%; object-fit: cover">
       </div>
-      <div class="col s3 tables">
-        <img src="images/pool.jpg" alt="snooker" id="pool" style="width: 100%; height: 100%; object-fit: cover">
+      <div class="tables">
+        <img src="images/pool.webp" alt="snooker" id="pool" style="width: 100%; height: 100%; object-fit: cover">
       </div>
     </div>`;
 

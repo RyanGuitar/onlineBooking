@@ -5,13 +5,12 @@ import {
   addToIdImage,
   addHeadClass,
   removeHeadClass,
+  setHeader,
 } from "../scripts/helpers.js";
 import SliderTemplate from "../templates/slider.js";
 
-
 function pickTime() {
-  addToIdImage("headerImage", "time.jpg");
-  addToId("headerText", "Select A Time");
+  setHeader("time.jpg", "Select A Time")
   addToId("AppContent", SliderTemplate());
   addClick("timePicker", checkPickedTime);
   addToId("headerCenter", '<button class="headerBtn" id="back">Back</button>');

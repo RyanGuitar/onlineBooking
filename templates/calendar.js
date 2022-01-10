@@ -2,7 +2,6 @@ import { getTheDay } from "../scripts/calendar.js";
 
 getTheDay();
 
-
 function calendar() {
   let { daysInMonth, year, month, startMonth } = window.theDay;
 
@@ -30,25 +29,21 @@ function calendar() {
 
   for (let i = 1; i <= daysInMonth; i++) {
     if (i < window.today && window.dateUsed == window.todaysDate) {
-      calendarHTML += `<div class="x-olive">${i}</div>`;
+      calendarHTML += `<div class="passedDate" style="border:1px solid gray">${i}</div>`;
     } else {
       calendarHTML +=
         i == window.today && window.dateUsed == window.todaysDate
-          ? `<div><button class="btn block today dates" style="width:100%;height:100%" id=${i}>${i}</button></div>`
-          : `<div><button class="btn block dates" style="height:100%;width:100%" id=${i}>${i}</button></div>`;
+          ? `<div style="border:none"><button class="today dates" style="width:100%;height:100%;outline:none;border:none" id="${i}">${i}</button></div>`
+          : `<div class="dates"><button class="dates" style="height:100%;width:100%;outline:none;border:none" id="${i}">${i}</button></div>`;
     }
   }
 
-  calendarHTML += `
-                    </div>
+  calendarHTML += `</div>
+                      <div id="calendarBtnBox" class="container row">
+                        <button id="dateBack" class="x-emerald calNav" disabled="true"><</button>
+                        <button id="dateForward" class="x-emerald calNav">></button>
                       </div>
-                      
-                        <div id="calendarBtnBox" class="container row">
-                          <button id="dateBack" class="x-emerald btn col s4 calNav" disabled="true"><</button>
-                          <button id="dateForward" class="x-emerald btn col s4 calNav">></button>
-                        </div>
-                        
-                      </div>`;
+                  </div>`;
 
   return calendarHTML;
 }

@@ -6,21 +6,19 @@ import {
   addHeadClass,
   importPage,
   removeHeadClass,
+  setHeader,
 } from "../scripts/helpers.js";
 import { getTheDay, checkIfSameMonth } from "../scripts/calendar.js";
 import calendar from "../templates/calendar.js";
-
 
 function selectADate() {
   getTheDay();
   const calendarHTML = calendar();
   addToId("preTimeBox", "");
+  setHeader("calendar.jpg", "Select A Date")
   removeHeadClass("preTimeBox", "timeSelected");
   removeHeadClass("headerCenter", "headerCenter");
-  addHeadClass("headerCenter", "headerCenterUp");
   const selectDateHTML = `<div id="selectADate"></div>`;
-  addToIdImage("headerImage", "calendar.jpg");
-  addToId("headerText", "Select A Date");
   addToId("headerCenter", '<button class="headerBtn" id="back">Back</button>');
   addClick("back", () => importPage("venueDetails"));
   addToId("AppContent", selectDateHTML);
@@ -39,7 +37,6 @@ function reloadCalendar(x) {
   addToId("selectADate", calendarTemplate);
   addClick("dateBack", () => reloadCalendar(-1));
   addClick("dateForward", () => reloadCalendar(1));
-  addToId("dateBox", `${window.theDay.month} ${window.theDay.year}`);
   addClick("calendar", dateClicked);
   checkIfSameMonth();
 }

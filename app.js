@@ -1,5 +1,16 @@
-import { addToId, addClick, importPage } from "./scripts/helpers.js";
+import {
+  addToId,
+  addClick,
+  importPage,
+  getId
+} from "./scripts/helpers.js";
 
+window.addEventListener('load', () => {
+  getId("view").style.height = `${window.innerHeight}px`
+})
+window.addEventListener('resize', () => {
+  getId("view").style.height = `${window.innerHeight}px`
+});
 
 const landingHTML = `
   <div id="buttonBox">

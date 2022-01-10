@@ -4,7 +4,6 @@ import { enableButton, disableButton } from "../scripts/helpers.js";
 let date = {};
 let first = true;
 
-
 function getStartMonth() {
   const start = new Date(date.getFullYear(), date.getMonth());
   return start.getDay();

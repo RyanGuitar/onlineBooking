@@ -4,10 +4,12 @@
 html {
   font-size: 14px;
 }
-
 body {
   margin: 0;
   user-select: none;
+}
+#view {
+  height: 100vh;
 }
 img {
   border-style: none;
@@ -19,12 +21,14 @@ header {
   width: 100%;
 }
 #headerText {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
   text-shadow: 1px 1px black;
   background: #008a00;
   color: #fff;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   margin: 0.5rem;
   position: absolute;
   top: 0;
@@ -38,31 +42,22 @@ header {
   display: block;
   color: #fff;
   margin: auto;
-  font-size: clamp(1rem, 2.4vw, 1.3rem);
   font-weight: 700;
   text-shadow: 1px 1px black;
-  box-shadow: 7px 7px 13px gray;
   width: 90%;
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 7px;
+  border: 1px solid black;
 }
 .headerBtn {
-  text-align: center;
-  border-radius: 7px;
   text-shadow: 1px 1px black;
   background: #008a00;
-  display: block;
   color: #fff;
   font-weight: 700;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  box-shadow: 7px 7px 15px black;
   padding: 0.5rem 1rem;
-  border: none;
+  border: 1px solid black;
 }
 #headerLogoBox {
   position: absolute;
-  transform: translate(0%, -50%);
   aspect-ratio: 530/350;
 }
 #headerCenter {
@@ -70,12 +65,6 @@ header {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  margin: 0.5rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.headerCenter {
-  top: 50%;
 }
 #tableBox {
   display: flex;
@@ -83,24 +72,25 @@ header {
   flex-direction: row;
 }
 .tables {
-  aspect-ratio: 1.5/1;
-}
-#headerGameBox {
-  position: absolute;
-  transform: translate(0%, -50%);
-  aspect-ratio: 530/350;
-}
-.dart {
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1/1;
+}
+#headerGameBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  aspect-ratio: 1/1;
 }
 #selectVenue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 1rem;
 }
 .logoBox {
   aspect-ratio: 530/350;
@@ -133,6 +123,7 @@ header {
   left: 0;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 #calender {
@@ -140,8 +131,8 @@ header {
   margin: 0 1rem;
 }
 #calendarBtnBox button {
+  font-weight: 900;
   border: none;
-  width: 45%;
 }
 #weekDays,
 #monthDays {
@@ -151,34 +142,26 @@ header {
   flex-wrap: wrap;
   align-content: center;
 }
-.dates {
-  /*font-size: calc(3 * 1vw);*/
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-}
-.calNav {
-  /*font-size: calc(3 * 1vw);*/
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  border-radius: 7px;
+#weekDays {
+  font-weight: 700;
+  text-shadow: 1px 1px black;
+  background: #3e65ff;
+  color: #fff;
+  border-bottom: 1px solid black;
 }
 #monthDays div,
 #weekDays div {
-  /*font-size: calc(3 * 1vw);*/
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 14.28%;
 }
 #weekDays div {
-  aspect-ratio: 1/0.5;
-}
-#monthDays div {
-  border: 1px solid lightgray;
+  font-weight: 700;
 }
 #monthDays {
   width: 100%;
 }
-
 .today {
   text-shadow: 1px 1px black;
   background: #008a00;
@@ -187,30 +170,24 @@ header {
 .dateClick {
   font-weight: 800;
   text-shadow: 1px 1px black;
-  outline: 1px solid black;
   color: #fff;
   background-color: #3e65ff;
 }
 .noBorder {
   visibility: hidden;
 }
-
 .calNav:disabled {
-  background-color: gray;
-  opacity: 0.5;
+  background: lightblue;
+  opacity: 0.7;
   box-shadow: none;
 }
-
 .finalDate {
   position: absolute;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 800;
   width: auto;
   color: #fff;
   text-shadow: 1px 1px black;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
   padding: 0.5rem 1rem;
   background: #008a00;
   border: 1px solid black;
@@ -230,46 +207,32 @@ header {
 }
 #timeBox,
 #preTimeBox {
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
   display: flex;
-  margin: 0.5rem 0;
   align-items: center;
   overflow: auto;
   gap: 1rem;
 }
 #timeBox {
-  max-width:30%;
+  max-width: 30%;
 }
-
 .booked {
   font-weight: 700;
   text-shadow: 1px 1px black;
   color: #fff;
-  background-color: #008a00;
+  background: #008a00;
 }
 .x-emerald {
   color: #fff;
-  background-color: #008a00;
+  background: #008a00;
 }
 .x-blue {
   color: #fff;
-  background-color: #3e65ff;
+  background: #3e65ff;
 }
-.x-olive {
-  color: #fff;
-  opacity: 0.7;
-  background-color: #6d8764;
-}
-
 #dateBox {
   position: absolute;
   padding: 0.5rem 1rem;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  font-weight: 800;
-  margin: 0.5rem;
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 700;
   color: white;
 }
 .dateBox {
@@ -297,4 +260,8 @@ header {
   padding: 1rem;
   font-weight: 700;
   border: 1px solid black;
+}
+.passedDate {
+  background: lightblue;
+  opacity: 0.7;
 }

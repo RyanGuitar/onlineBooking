@@ -6,32 +6,26 @@ import {
   addHeadClass,
   addToIdImage,
   removeHeadClass,
+  clearIdInner,
+  setHeader,
+  addToIdWithClick,
 } from "../scripts/helpers.js";
 import venueDetailsTemplate from "../templates/venueDetails.js";
 
-
 const venue = window.venue[0];
 async function venueDetails() {
-  removeHeadClass("headerLogoBox", "headerLogoBoxUp");
-  removeHeadClass("headerGameBox", "headerBorder");
-  removeHeadClass("headerCenter", "headerCenterUp");
-  addHeadClass("headerCenter", "headerCenter");
-  addToIdImage("headerImage", "facilities.jpg");
+  clearIdInner(["dateBox", "headerGameBox"])
+  setHeader("facilities.jpg", "Select A Game")
   addToId("headerCenter", `<button class="headerBtn" id="back">Back</button>`);
-  addToId("headerText", "Select A Game");
-  addToId("dateBox", "");
-  addToId("headerGameBox", "");
-  removeHeadClass("dateBox", "dateBox");
   addClick("back", () => importPage("selectVenue"));
+  removeHeadClass("dateBox", "dateBox");
+  
   const template = `
     <div id="buttonBox"></div>
     <div id="venueDetails"></div>`;
+    
   addToId("AppContent", template);
-  addToId(
-    "buttonBox",
-    `<button id="mapBtn" class="contentBtn">Google Map</button>`
-  );
-  addClick("mapBtn", addMap);
+  addToIdWithClick("buttonBox", `<button id="mapBtn" class="contentBtn">Google Map</button>`, addMap)
   addToId("venueDetails", venueDetailsTemplate());
   addClick("tableBox", saveSelectedTable);
 }
